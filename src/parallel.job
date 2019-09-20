@@ -1,0 +1,15 @@
+#!/bin/bash
+#@ initialdir = ~/gruppo8_BitonicSort/src
+#@ input = /dev/null
+#@ output = test/test_parallelo.out
+#@ error = test/test.err
+#@ job_type = parallel
+#@ class = short
+#@ total_tasks = 8
+#@ queue
+
+echo "Test parallelo 8 processori 8388608"
+
+./parallel_bitonicsort.o 8388608 ../data/8388608_numbers.txt test/out_parallel.txt -procs 8
+
+echo "FINE"

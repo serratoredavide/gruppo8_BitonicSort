@@ -1,0 +1,20 @@
+#!/bin/bash
+#@ initialdir = ~/gruppo8_BitonicSort/src
+#@ input = /dev/null
+#@ output = test/test_singlecore.out
+#@ error = test/test.err
+#@ job_type = parallel
+#@ class = medium
+#@ total_tasks = 1
+#@ queue
+
+echo "Test 1 processore 8388608"
+
+echo "Test Divide & Conquer"
+./dEc_bitonicsort.o 8388608 ../data/8388608_numbers.txt test/out_dEc.txt -procs 1
+
+
+echo "Test iterativo"
+./iterative_bitonicsort.o 8388608 ../data/8388608_numbers.txt test/out_iterative.txt -procs 1
+
+echo "FINE"
